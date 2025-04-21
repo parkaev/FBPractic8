@@ -1,0 +1,135 @@
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #e0e0e0;
+  padding: 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #00b4d8, #90e0ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 180, 216, 0.2);
+}
+
+.controls, .filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 240px;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid rgba(144, 224, 239, 0.3);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #00b4d8;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.3);
+}
+
+button {
+  background: linear-gradient(135deg, #00b4d8 0%, #90e0ef 100%);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 180, 216, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button.disabled {
+  background: #4a4a6d;
+  color: #6b6b8f;
+  cursor: not-allowed;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+li {
+  padding: 1.2rem 1.6rem;
+  margin: 0;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+li.completed {
+  position: relative;
+  color: #6b6b8f;
+  background: rgba(0, 180, 216, 0.05);
+}
+
+li.completed::after {
+  content: "✓";
+  color: #00b4d8;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .controls, .filters {
+    gap: 0.8rem;
+  }
+
+  input[type="text"], button {
+    width: 100%;
+  }
+}
